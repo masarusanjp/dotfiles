@@ -1,84 +1,88 @@
-#                                                                                                   
-# .zshrc is sourced in interactive shells.                                                          
-# It should contain commands to set up aliases,                                                     
-# functions, options, key bindings, etc.                                                            
-#                                                                                                   
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-autoload -U compinit                                                                                
-compinit                                                                                            
-                                                                                                    
-#allow tab completion in the middle of a word                                                       
-setopt COMPLETE_IN_WORD                                                                             
-                                                                                                    
-bindkey -e                                                                                          
-bindkey "^?"    backward-delete-char                                                                
-bindkey "^H"    backward-delete-char                                                                
-bindkey "^[[3~" delete-char                                                                         
-bindkey "^[[1~" beginning-of-line                                                                   
-bindkey "^[[4~" end-of-line                                                                         
-                                                                                                    
-                                                                                                    
-## keep background processes at full speed                                                          
-#setopt NOBGNICE                                                                                    
-## restart running processes on exit                                                                
-#setopt HUP                                                                                         
-                                                                                                    
-## history                                                                                          
-#setopt APPEND_HISTORY                                                                              
-## for sharing history between zsh processes                                                        
-#setopt INC_APPEND_HISTORY                                                                          
-#setopt SHARE_HISTORY                                                                               
-HISTFILE=$HOME/.zsh-history                                                                         
-HISTSIZE=100000                                                                                     
-SAVEHIST=100000                                                                                     
-setopt extended_history  
+# Path to your oh-my-zsh installation.
+export ZSH=/Users/masaru-ichikawa/.oh-my-zsh
 
-setopt share_history
-function history-all { history -E 1 }
+# Set name of the theme to load. Optionally, if you set this to "random"
+# it'll load a random theme each time that oh-my-zsh is loaded.
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+ZSH_THEME="robbyrussell"
 
-# color
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
 
-local GRAY=$'%{\e[1;30m%}'
-local LIGHT_GRAY=$'%{\e[0;37m%}'
-local WHITE=$'%{\e[1;37m%}'
-local LIGHT_BLUE=$'%{\e[1;36m%}'
-local YELLOW=$'%{\e[1;33m%}'
-local PURPLE=$'%{\e[1;35m%}'
-local GREEN=$'%{\e[1;32m%}'
-local BLUE=$'%{\e[1;34m%}'
+# Uncomment the following line to use hyphen-insensitive completion. Case
+# sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
 
-# prompt
+# Uncomment the following line to disable bi-weekly auto-update checks.
+# DISABLE_AUTO_UPDATE="true"
 
-# for gentoo
-PROMPT='[${USER}@${HOSTNAME}] %(!.#.$) '
-RPROMPT='[%~]'
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=13
 
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
 
-## never ever beep ever
-#setopt NO_BEEP
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
 
-## automatically decide when to page a list of completions
-#LISTMAX=0
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
 
-## disable mail checking
-#MAILCHECK=0
+# Uncomment the following line to display red dots whilst waiting for completion.
+# COMPLETION_WAITING_DOTS="true"
 
-# fool ploof
-alias cp='cp -i'
-alias mv='mv -i'
-alias rm='rm -i'
-alias ls='ls -aFG'
-alias ll='ls -laFG'
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-setopt PROMPT_SUBST
-setopt share_history
-setopt auto_pushd
-setopt auto_cd
-setopt correct
-setopt list_packed
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# HIST_STAMPS="mm/dd/yyyy"
 
-bindkey -e
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
 
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git)
 
-autoload -U colors
-colors
+source $ZSH/oh-my-zsh.sh
+
+# User configuration
+
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# ssh
+# export SSH_KEY_PATH="~/.ssh/rsa_id"
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+export PATH="$PATH:$HOME/.rbenv/bin"
+eval "$(rbenv init -)"
