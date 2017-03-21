@@ -1,2 +1,4 @@
 noremap <C-a> ^
 noremap <C-e> $
+inoremap <C-a> <C-o>^
+inoremap <C-e> <C-o>$
