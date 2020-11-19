@@ -1,0 +1,87 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["<C-a>"],
+            "after": [],
+            "commands": [
+                {
+                    "command": "cursorHome"
+                }
+            ]
+        },
+        {
+            "before": ["<C-e>"],
+            "after": [],
+            "commands": [
+                {
+                    "command": "cursorEnd"
+                }
+            ]
+        }
+    ],
+    "vim.insertModeKeyBindingsNonRecursive": [
+        {
+            "before":["<C-a>"],
+            "after":[],
+            "commands": [
+                {
+                    "command": "cursorHome"
+                }
+            ]
+        },
+        {
+            "before":["<C-e>"],
+            "after":[],
+            "commands": [
+                {
+                    "command": "cursorEnd"
+                }
+            ]
+        }
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before":["<C-a>"],
+            "after":["^"],
+        },
+        {
+            "before":["<C-e>"],
+            "after":["$"],
+        }
+    ],
+    "vim.handleKeys":{
+        "<C-a>": false,
+        "<C-e>": false
+    },
+    "[typescript]": {
+        "editor.tabSize": 2,
+        "editor.formatOnSave": true
+    },
+    "[javascript]": {
+        "editor.tabSize": 2,
+        "editor.formatOnSave": true
+    },
+    "[typescriptreact]": {
+        "editor.tabSize": 2,
+        "editor.formatOnSave": true
+    },
+    "window.zoomLevel": 0,
+    "files.associations": {
+        "Fastfile": "ruby"
+    },
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "C_Cpp.updateChannel": "Insiders",
+    "[dart]": {
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true,
+        "editor.rulers": [
+            80
+        ],
+        "editor.selectionHighlight": false,
+        "editor.suggest.snippetsPreventQuickSuggestions": false,
+        "editor.suggestSelection": "first",
+        "editor.tabCompletion": "onlySnippets",
+        "editor.wordBasedSuggestions": false
+    },
+}
